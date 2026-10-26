@@ -1,0 +1,495 @@
+:root {
+    --vino: #722F37;
+    --rosa-fuerte: #FF1493;
+    --rosa-claro: #FFB6C1;
+    --blanco: #FFFFFF;
+    --crema: #FFF0F5;
+    --sombra: 4px 4px 0px #000000;
+}
+
+body {
+    background-color: var(--rosa-claro);
+    background-image: radial-gradient(var(--rosa-fuerte) 15%, transparent 16%), radial-gradient(var(--vino) 15%, transparent 16%);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+    font-family: 'Verdana', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    overflow-x: hidden;
+}
+
+/* Estructura general de 3 columnas */
+.main-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1400px;
+    margin: 30px auto;
+    padding: 0 15px;
+    gap: 15px;
+}
+
+/* 1. Menú Lateral Izquierdo (Sin bloque contenedor, botones cortos y sueltos) */
+.sidebar-menu {
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar-logo {
+    text-align: center;
+    background: var(--blanco);
+    border: 3px solid #000;
+    box-shadow: 3px 3px 0px #000;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+    .sidebar-logo img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid var(--vino);
+        object-fit: cover;
+        margin-bottom: 3px;
+    }
+
+    .sidebar-logo span {
+        font-family: 'VT323', monospace;
+        font-size: 18px;
+        color: var(--vino);
+        display: block;
+    }
+
+.sidebar-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-btn {
+    background-color: var(--crema);
+    border: 2px solid #000;
+    box-shadow: 2px 2px 0px #000;
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: 0.1s;
+    text-align: center;
+    border-radius: 5px;
+}
+
+    .nav-btn:hover {
+        background-color: var(--rosa-fuerte);
+        color: var(--blanco);
+        transform: translate(-2px, -2px);
+        box-shadow: 4px 4px 0px #000;
+    }
+
+.cart-btn {
+    background-color: var(--vino);
+    color: var(--blanco);
+}
+
+/* Contenido Central */
+.central-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-split-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    width: 100%;
+    max-width: 1050px;
+}
+
+.hero-card {
+    background: var(--blanco);
+    border: 3px solid #000;
+    box-shadow: var(--sombra);
+    border-radius: 10px;
+    padding: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-text-card {
+    background: var(--crema);
+}
+
+.critical-title {
+    font-family: 'VT323', monospace;
+    font-size: 42px;
+    color: var(--vino);
+    line-height: 1.1;
+    text-shadow: 2px 2px var(--rosa-claro);
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+}
+
+.divider-line {
+    width: 80%;
+    height: 4px;
+    background-color: var(--vino);
+    margin: 10px 0;
+    border-radius: 2px;
+}
+
+.critical-subtitle {
+    font-family: 'VT323', monospace;
+    font-size: 42px;
+    color: var(--rosa-fuerte);
+    margin: 10px 0 0 0;
+    text-shadow: 2px 2px var(--rosa-claro);
+    text-transform: uppercase;
+}
+
+.hero-image-card .image-container img.main-product-img {
+    width: 250px;
+    max-width: 100%;
+    height: auto;
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0px #000;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.hero-image-card h1 {
+    font-family: 'VT323', monospace;
+    font-size: 45px;
+    color: var(--vino);
+    text-shadow: 2px 2px var(--rosa-claro);
+    margin: 8px 0;
+}
+
+.hero-image-card .slogan {
+    font-family: 'Comic Neue', cursive;
+    font-size: 18px;
+    background: var(--crema);
+    display: inline-block;
+    padding: 5px 15px;
+    border: 2px dashed var(--vino);
+    margin-bottom: 20px;
+}
+
+/* Botón de Cont. Nutricional */
+.nutrition-popup-btn {
+    background-color: var(--vino);
+    color: var(--blanco);
+    font-family: 'VT323', monospace;
+    font-size: 24px;
+    padding: 8px 20px;
+    border: 2px solid #000;
+    box-shadow: 3px 3px 0px #000;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+    .nutrition-popup-btn:hover {
+        background-color: var(--rosa-fuerte);
+        transform: translate(-2px, -2px);
+        box-shadow: 5px 5px 0px #000;
+    }
+
+/* 3. Barra de Botones Sociales y Ubicación Satelital Derecha */
+.right-social-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 50px;
+}
+
+.side-icon-btn {
+    width: 45px;
+    height: 45px;
+    background: var(--blanco);
+    border: 3px solid #000;
+    box-shadow: 3px 3px 0px #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+    .side-icon-btn:hover {
+        background: var(--rosa-claro);
+        transform: scale(1.1);
+        box-shadow: 4px 4px 0px #000;
+    }
+
+.location-btn {
+    background-color: #FF8DA1;
+}
+
+/* Ventanas emergentes (Modales arrastrables) */
+.modal {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    width: 380px;
+    background-color: var(--blanco);
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0px #000;
+    border-radius: 5px;
+}
+
+.modal-header {
+    background-color: var(--vino);
+    color: var(--blanco);
+    padding: 8px 12px;
+    font-family: 'VT323', monospace;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #000;
+    cursor: grab;
+}
+
+    .modal-header:active {
+        cursor: grabbing;
+    }
+
+.close-btn {
+    background: var(--rosa-fuerte);
+    border: 2px solid #000;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 2px 8px;
+}
+
+.modal-body {
+    padding: 15px;
+    font-family: 'Verdana', sans-serif;
+    max-height: 55vh;
+    overflow-y: auto;
+    background: #fff;
+}
+
+/* Equipo de desarrollo */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.team-member {
+    background: var(--crema);
+    border: 2px solid #000;
+    padding: 8px;
+    text-align: center;
+    box-shadow: 2px 2px 0px #000;
+}
+
+.team-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid var(--vino);
+    object-fit: cover;
+    margin-bottom: 5px;
+}
+
+/* Estilos del Carrito */
+.cart-product-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: var(--crema);
+    padding: 10px;
+    border: 2px solid #000;
+    margin-bottom: 15px;
+}
+
+.cart-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 1px solid #000;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    border-top: 4px solid var(--rosa-fuerte);
+    overflow: hidden;
+    white-space: nowrap;
+    z-index: 2000;
+    padding: 10px 0;
+    box-shadow: 0px -4px 0px rgba(0,0,0,0.3);
+}
+
+.marquee-content {
+    display: flex;
+    width: max-content;
+    font-family: 'VT323', monospace;
+    font-size: 26px;
+    color: var(--rosa-fuerte);
+    text-transform: uppercase;
+    animation: marquee 7s linear infinite;
+}
+
+    .marquee-content span {
+        display: inline-block;
+        padding-right: 30px;
+    }
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Tabla Nutricional*/
+.nutrition-section {
+    margin-top: 10px;
+    border: 3px solid #000;
+    background: var(--crema);
+    padding: 10px;
+    box-shadow: 3px 3px 0px #000;
+}
+
+.nutrition-title {
+    font-family: 'VT323', monospace;
+    font-size: 24px;
+    color: var(--vino);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.retro-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--blanco);
+    font-family: 'Verdana', sans-serif;
+    font-size: 12px;
+    border: 2px solid #000;
+}
+
+    .retro-table th, .retro-table td {
+        border: 1px solid #000;
+        padding: 6px 8px;
+        text-align: left;
+    }
+
+    .retro-table th {
+        background-color: var(--vino);
+        color: var(--blanco);
+        font-family: 'Comic Neue', cursive;
+        text-align: center;
+        border-bottom: 2px solid #000;
+    }
+
+.table-section-header {
+    background-color: var(--rosa-claro);
+    text-align: center;
+    font-weight: bold;
+}
+
+.retro-table tr:nth-child(even) {
+    background-color: #faf0f2;
+}
+
+/* ================= RESPONSIVO PARA CELULARES ================= */
+@media screen and (max-width: 1000px) {
+    .main-layout {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin: 15px auto 80px auto; /* Margen inferior para que el footer no tape el contenido */
+        padding: 0 10px;
+    }
+
+    /* Menú lateral pasa arriba en horizontal */
+    .sidebar-menu {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .sidebar-logo {
+        display: none; /* Oculta el logo lateral en celular para ahorrar espacio */
+    }
+
+    .sidebar-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-btn {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+
+    /* Contenido central en columna vertical */
+    .hero-split-container {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .hero-card {
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .critical-title, .critical-subtitle {
+        font-size: 30px;
+    }
+
+    /* BARRA DE REDES SOCIALES Y UBICACIÓN: Ahora visibles y centradas abajo del producto */
+    .right-social-bar {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        gap: 15px;
+        margin: 10px 0 20px 0;
+    }
+
+    .side-icon-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+    }
+
+    /* Ajuste de ventanas modales para celulares */
+    .modal {
+        width: 92% !important;
+        max-width: 360px;
+        left: 4% !important;
+    }
+}

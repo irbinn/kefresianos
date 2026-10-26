@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ke-fresianos | Fermenta tu bienestar</title>
+    <!-- Tipografía retro estilo Y2K / Comic -->
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=VT323&family=Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Contenedor Principal -->
+    <div class="main-layout">
+
+        <!-- 1. MENÚ LATERAL IZQUIERDO (SUELTO, SIN BLOQUE) -->
+        <aside class="sidebar-menu">
+            <div class="sidebar-logo">
+                <img src="img/logo n.jpeg" alt="Logo Ke-fresianos">
+                <span>KE-FRESIANOS</span>
+            </div>
+            <div class="sidebar-buttons">
+                <button class="nav-btn" onclick="openModal('modal-kefresianos', event)">¿Qué son?</button>
+                <button class="nav-btn" onclick="openModal('modal-hacemos', event)">¿Qué hacemos?</button>
+                <button class="nav-btn" onclick="openModal('modal-conocenos', event)">Conócenos</button>
+                <button class="nav-btn" onclick="openModal('modal-valores', event)">Valores</button>
+                <button class="nav-btn" onclick="openModal('modal-equipo', event)">Equipo</button>
+                <button class="nav-btn cart-btn" onclick="openModal('modal-carrito', event)">🛒 Carrito (<span id="cart-count">0</span>)</button>
+            </div>
+        </aside>
+
+        <!-- 2. CONTENIDO CENTRAL ( MÁS ESPACIO ) -->
+        <main class="central-content">
+            <header class="hero-split-container">
+                <!-- Tarjeta Izquierda -->
+                <div class="hero-card hero-text-card">
+                    <h2 class="critical-title">¡Los pensadores críticos toman kéfir!</h2>
+                    <div class="divider-line"></div>
+                    <h2 class="critical-subtitle">¿Tú lo consumes?</h2>
+                </div>
+
+                <!-- Tarjeta Derecha -->
+                <div class="hero-card hero-image-card">
+                    <div class="image-container">
+                        <img src="img/cuadro.jpeg" alt="Ke-fresianos" class="main-product-img">
+                    </div>
+                    <h1>KE-FRESIANOS</h1>
+                    <div class="slogan">"Fermenta tu bienestar, nutre tu vida."</div>
+                    <!-- Botón para abrir la Tabla Nutricional Emergente -->
+                    <button class="nutrition-popup-btn" onclick="openModal('modal-nutricional', event)">Cont. Nutricional</button>
+                </div>
+            </header>
+        </main>
+
+        <!-- 3. BOTONES FLOTANTES DERECHOS -->
+        <aside class="right-social-bar">
+            <a href="https://instagram.com" target="_blank" class="side-icon-btn" title="Instagram">📸</a>
+            <a href="https://wa.me/527710000000" target="_blank" class="side-icon-btn" title="WhatsApp">💬</a>
+            <a href="https://maps.app.goo.gl/UGsVzZtFT2ymr5xa7" target="_blank" class="side-icon-btn location-btn" title="Ubicación Satelital">🛰️</a>
+            <a href="mailto:kefresianos@gmail.com" class="side-icon-btn" title="Gmail">✉️</a>
+        </aside>
+
+    </div>
+
+    <!-- ================= VENTANAS EMERGENTES (MODALES) ================= -->
+
+    <div id="modal-kefresianos" class="modal">
+        <div class="modal-header" onmousedown="dragElement(document.getElementById('modal-kefresianos'), event)">
+            <span>¿Qué son los Ke-fresianos?</span>
+            <button class="close-btn" onclick="closeModal('modal-kefresianos')">X</button>
+        </div>
+        <div class="modal-body">
+            <p>Es una mezcla en polvo instantánea elaborada mediante kéfir deshidratado, fresa deshidratada, proteína de suero de leche y monk fruit.</p>
+            <p>Transforma el kéfir tradicional líquido en un formato práctico en polvo que facilita su almacenamiento, transporte y preparación.</p>
+        </div>
+    </div>
+
+    <div id="modal-hacemos" class="modal">
+        <div class="modal-header" onmousedown="dragElement(document.getElementById('modal-hacemos'), event)">
+            <span>¿Qué hacemos?</span>
+            <button class="close-btn" onclick="closeModal('modal-hacemos')">X</button>
+        </div>
+        <div class="modal-body">
+            <p>Brindamos una alternativa funcional para incorporar alimentos fermentados y proteína de alta calidad (7.15 g por porción) a la vida diaria.</p>
+            <p><b>Ventajas:</b> Libre de azúcares añadidos, bajo en sodio y preparación rápida en segundos.</p>
+        </div>
+    </div>
+
+    <div id="modal-conocenos" class="modal">
+        <div class="modal-header" onmousedown="dragElement(document.getElementById('modal-conocenos'), event)">
+            <span>Conócenos</span>
+            <button class="close-btn" onclick="closeModal('modal-conocenos')">X</button>
+        </div>
+        <div class="modal-body" style="font-size: 14px; line-height: 1.5;">
+            <p><b>¿Quiénes somos?</b><br>Proyecto desarrollado por estudiantes de la Licenciatura en Nutrición del Instituto de Ciencias de la Salud (ICSa) de la UAEH.</p>
+
+            <hr style="border: 1px solid var(--vino); margin: 10px 0;">
+
+            <p><b>Misión:</b><br>Elaborar y ofrecer una mezcla en polvo a base de kéfir y fresa que proporcione una alternativa práctica para su consumo, mediante un producto de calidad, fácil preparación y características acordes con las necesidades de los consumidores[cite: 38].</p>
+
+            <p><b>Visión:</b><br>Consolidarnos como una alternativa innovadora y accesible de alimentos funcionales en el mercado local, destacando por nuestro compromiso con la nutrición, la practicidad y la mejora continua.</p>
+
+            <p><b>Objetivo General:</b><br>Introducir y desarrollar Ke-fresianos en el mercado local mediante estrategias de investigación de mercado, optimización del producto, promoción, comercialización y distribución que permitan evaluar su aceptación y establecer bases para su crecimiento durante los primeros seis meses.</p>
+        </div>
+    </div>
+
+    <div id="modal-valores" class="modal">
+        <div class="modal-header" onmousedown="dragElement(document.getElementById('modal-valores'), event)">
+            <span>Valores de la Empresa</span>
+            <button class="close-btn" onclick="closeModal('modal-valores')">X</button>
+        </div>
+        <div class="modal-body">
+            <ul>
+                <li><b>Calidad:</b> Ingredientes seleccionados e higiene estricta.</li>
+                <li><b>Innovación:</b> Presentación en polvo única para el kéfir.</li>
+                <li><b>Honestidad:</b> Información nutrimental transparente.</li>
+                <li><b>Compromiso:</b> Mejora continua y satisfacción.</li>
+                <li><b>Trabajo en equipo:</b> Colaboración constante del grupo.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-equipo" class="modal">
+        <div class="modal-header" onmousedown="dragElement(document.getElementById('modal-equipo'), event)">
+            <span>Equipo de Desarrollo</span>
+            <button class="close-btn" onclick="closeModal('modal-equipo')">X</button>
+        </div>
+        <div class="modal-body">
+            <p style="text-align: center; margin-top: 0;">¡Conoce al equipo detrás de Ke-fresianos!</p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="img/frambuesita.jpg" alt="Frambuesita" class="team-img">
+                    <p style="font-size: 11px; margin:5px 0;"><b>Frambuesita</b><br>Vanessa Ivonne L.</p>
+                </div>
+                <div class="team-member">
+                    <img src="img/dulcedelimon.jpg" alt="Dulce de Limón" class="team-img">
+                    <p style="font-size: 11px; margin:5px 0;"><b>Dulce de Limón</b><br>Luz Rebecca C.</p>
+                </div>
+                <div class="team-member">
+                    <img src="img/morita.jpg" alt="Morita" class="team-img">
+                    <p style="font-size: 11px; margin:5px 0;"><b>Morita</b><br>Shadani Lozano H.</p>
+                </div>
+                <div class="team-member">
+                    <img src="img/naranjita.jpg" alt="Naranjita" class="team-img">
+                    <p style="font-size: 11px; margin:5px 0;"><b>Naranjita</b><br>Irvin Montoya X.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VENTANA EMERGENTE: TABLA NUTRICIONAL -->
+    <div id="modal-nutricional" class="modal" style="width: 500px;">
+        <div class="modal-header" onmousedown="dragElement(document.getElementById('modal-nutricional'), event)">
+            <span>Contenido Nutrimental</span>
+            <button class="close-btn" onclick="closeModal('modal-nutricional')">X</button>
+        </div>
+        <div class="modal-body">
+            <div class="nutrition-section" style="margin-top:0;">
+                <h3 class="nutrition-title">★ INFORMACIÓN NUTRICIONAL ★</h3>
+                <div style="background-color: var(--rosa-claro); border: 2px solid #000; padding: 6px; text-align: center; font-family: 'Comic Neue', cursive; font-weight: bold; font-size: 13px; margin-bottom: 10px;">
+                    Porción preparada: 20 g de polvo + 150 ml de leche
+                </div>
+                <table class="retro-table">
+                    <thead>
+                        <tr>
+                            <th>Nutrimento</th>
+                            <th>Por 100 g de polvo</th>
+                            <th>Por porción preparada</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><b>Contenido energético</b></td><td>447.27 kcal (1,871.98 kJ)</td><td>160.70 kcal (672.59 kJ)</td></tr>
+                        <tr><td><b>Proteínas</b></td><td>63.99 g</td><td>17.43 g</td></tr>
+                        <tr><td><b>Grasas totales</b></td><td>7.77 g</td><td>4.24 g</td></tr>
+                        <tr><td style="padding-left: 20px;"><i>Grasas saturadas</i></td><td>3.27 g</td><td>2.40 g</td></tr>
+                        <tr><td style="padding-left: 20px;"><i>Grasas trans</i></td><td>0 g</td><td>0 g</td></tr>
+                        <tr><td><b>Hidratos de carbono</b></td><td>29.92 g</td><td>13.17 g</td></tr>
+                        <tr><td style="padding-left: 20px;"><i>Azúcares totales</i></td><td>26.65 g</td><td>12.52 g</td></tr>
+                        <tr><td style="padding-left: 20px;"><i>Azúcares añadidos</i></td><td>0 g</td><td>0 g</td></tr>
+                        <tr><td><b>Fibra dietética</b></td><td>0.45 g</td><td>0.09 g</td></tr>
+                        <tr><td><b>Sodio</b></td><td>355.38 mg</td><td>146.08 mg</td></tr>
+                        <tr><td><b>Vitamina A</b></td><td>657.35 µg</td><td>221.47 µg</td></tr>
+                        <tr><td><b>Vitamina C</b></td><td>15.50 mg</td><td>3.10 mg</td></tr>
+                        <tr><td><b>Vitamina B3 (niacina)</b></td><td>0.225 mg</td><td>0.045 mg</td></tr>
+                        <tr><td><b>Vitamina D</b></td><td>12.70 µg</td><td>3.48 µg</td></tr>
+                        <tr><td><b>Calcio</b></td><td>1,397.75 mg</td><td>305.56 mg</td></tr>
+                        <tr><td><b>Hierro</b></td><td>0.13 mg</td><td>0.026 mg</td></tr>
+                    </tbody>
+                </table>
+
+                <!-- Sección de Cultivos Probióticos -->
+                <div style="margin-top: 12px; background: var(--blanco); border: 2px solid #000; padding: 10px; font-size: 11px;">
+                    <b style="font-family: 'Comic Neue', cursive; color: var(--vino); font-size: 13px; display: block; margin-bottom: 4px;">CULTIVOS PROBIÓTICOS:</b>
+                    <p style="margin: 0; line-height: 1.3; font-style: italic;">
+                        Lactobacillus lactis, Lactobacillus rhamnosus, Streptococcus diacetylactis, Lactobacillus plantarum, Lactobacillus casei, Saccharomyces florentinus, Leuconostoc cremoris, Bifidobacterium longum, Bifidobacterium breve, Lactobacillus acidophilus, Bifidobacterium lactis y Lactobacillus reuteri.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- VENTANA EMERGENTE: CARRITO -->
+    <div id="modal-carrito" class="modal">
+        <div class="modal-header" onmousedown="dragElement(document.getElementById('modal-carrito'), event)">
+            <span>Carrito de Compras</span>
+            <button class="close-btn" onclick="closeModal('modal-carrito')">X</button>
+        </div>
+        <div class="modal-body">
+            <div class="cart-product-box">
+                <img src="img/cuadro.jpeg" alt="Producto" class="cart-img">
+                <div>
+                    <p style="margin:0; font-weight:bold;">Presentación Ke-fresianos</p>
+                    <p style="margin:5px 0 0 0; color:var(--vino);">$35.00 MXN c/u</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin: 15px 0;">
+                <button class="nav-btn" style="background:#ff4d4d; color:white; padding: 6px 12px;" onclick="changeQuantity(-1)">-</button>
+                <span id="product-quantity" style="font-size: 20px; font-weight: bold; margin: 0 10px;">0</span>
+                <button class="nav-btn" style="background:#2ecc71; color:white; padding: 6px 12px;" onclick="changeQuantity(1)">+ Agregar</button>
+            </div>
+            <p style="text-align:center; font-weight:bold; margin: 5px 0;">Total porciones: <span id="cart-total-units">0</span></p>
+            <p style="text-align:center; font-weight:bold; font-size: 16px; color: var(--vino); margin: 8px 0;">Total a pagar: $<span id="cart-total-price">0.00</span> MXN</p>
+            <button class="nav-btn" style="width:100%; background:var(--vino); color:white; padding:10px; font-size:15px; margin-top:5px;" onclick="checkoutWhatsApp()">Finalizar pedido por WhatsApp</button>
+        </div>
+    </div>
+
+    <!-- Pie de página animado -->
+    <footer>
+        <div class="marquee-content">
+            <span>★ BIENVENIDOS A MUNDO KE-FRESIANO ★ ★ SIN AZÚCARES AÑADIDOS ★ PROTEÍNA DE SUERO + KÉFIR DESHIDRATADO ★ ¡PRUÉBALO HOY! ★ ★ BIENVENIDOS A MUNDO KE-FRESIANO ★ &nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>★ BIENVENIDOS A MUNDO KE-FRESIANO ★ ★ SIN AZÚCARES AÑADIDOS ★ PROTEÍNA DE SUERO + KÉFIR DESHIDRATADO ★ ¡PRUÉBALO HOY! ★ ★ BIENVENIDOS A MUNDO KE-FRESIANO ★&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
